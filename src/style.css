@@ -1,0 +1,94 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.screen {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow-y: auto;
+  padding-bottom: 60px; /* 플로팅 버튼 높이보다 약간 더 크게 설정 */
+}
+
+.image-container {
+  max-width: 100%;
+  padding: 0 20px; /* 좌우 여백 */
+  box-sizing: border-box;
+}
+
+.image-container a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+}
+
+.image-container a:hover {
+  cursor: pointer;
+}
+
+.desktop-image,
+.mobile-image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.desktop-image {
+  display: block;
+}
+
+.mobile-image {
+  display: none;
+}
+
+.floating-button {
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+  font-weight: 600; /* Semi-Bold */
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #007bff;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  font-size: 18px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+  z-index: 1000;
+}
+
+.floating-button:hover {
+  background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+  .image-container {
+    padding: 0; /* 모바일 버전에서 좌우 여백 제거 */
+  }
+
+  .desktop-image {
+    display: none;
+  }
+  
+  .mobile-image {
+    display: block;
+  }
+
+  .floating-button {
+    font-size: 16px;
+    padding: 12px;
+    font-weight: 500;
+  }
+  
+  /* 모바일에서 이미지 컨테이너에 하단 여백 추가 */
+  .image-container {
+    margin-bottom: 50px;
+  }
+}

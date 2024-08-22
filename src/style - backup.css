@@ -1,0 +1,47 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.screen {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow-y: auto;
+}
+
+.image-container {
+  max-width: 100%;
+  padding: 0 20px; /* 데스크탑 버전의 좌우 여백 */
+  box-sizing: border-box;
+}
+
+.desktop-image,
+.mobile-image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.mobile-image {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .image-container {
+    padding: 0; /* 모바일 버전에서 좌우 여백 제거 */
+  }
+
+  .desktop-image {
+    display: none;
+  }
+  
+  .mobile-image {
+    display: block;
+    width: 100%; /* 모바일 이미지가 화면 전체 너비를 차지하도록 설정 */
+  }
+}
